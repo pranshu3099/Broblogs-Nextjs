@@ -1,32 +1,7 @@
-import { useCallback, useState, useEffect, useLayoutEffect } from "react";
-import { useMemo } from "react";
+import Link from "next/link";
 import axios from "axios";
-const Home = ({ posts }) => {
-  const [likes, setLikes] = useState(0);
-  const [userpost, setUserPost] = useState([]);
 
-  // useEffect(() => {
-  //   let data = JSON.parse(localStorage.getItem("postdata"));
-  //   if (!data.length || userpost.length) {
-  //     localStorage.setItem("postdata", JSON.stringify(userpost));
-  //   }
-  //   if (Object.keys(userpost).length) {
-  //     navigate("/posts", { state: userpost });
-  //   }
-  // }, [userpost, navigate]);
-  const handleBlog = (e, post_id) => {
-    // axios
-    //   .get(`http://localhost:3000/getsinglepost/${post_id}`, {
-    //     headers,
-    //     withCredentials: true,
-    //   })
-    //   .then((res) => {
-    //     setUserPost(res?.data);
-    //   })
-    //   .catch((err) => {
-    //     setUserPost(err?.response?.data);
-    //   });
-  };
+const Home = ({ posts }) => {
   return (
     <>
       <div className="home-container">
@@ -92,11 +67,7 @@ const Home = ({ posts }) => {
           </header>
 
           <>
-            <div>
-              {posts.length && (
-                <BlogPosts data={posts} onHandleBlog={handleBlog} />
-              )}
-            </div>
+            <div>{posts.length && <BlogPosts data={posts} />}</div>
           </>
         </div>
         <hr />
@@ -119,22 +90,20 @@ const Home = ({ posts }) => {
   );
 };
 
-const BlogPosts = ({ data, onHandleBlog }) => {
-  const handleBlog = (e, post_id) => {
-    onHandleBlog(e, post_id);
-  };
+const BlogPosts = ({ data }) => {
   const posts_data = data[0]?.posts;
   return (
     <>
       {posts_data.map((post, index) => (
         <div key={index} className="user-blogs-sub-container">
-          <p
-            onClick={(e) => handleBlog(e, post.posts_id)}
-            style={{ cursor: "pointer" }}
-            key={post?.id}
+          <Link
+            href={`posts/${post.posts_id}`}
+            style={{ textDecoration: "none", color: "black" }}
           >
-            {post.title}
-          </p>
+            <p style={{ cursor: "pointer" }} key={post?.id}>
+              {post.title}
+            </p>
+          </Link>
           <div className="date-name-container">
             <div>{post.created_at.substring(0, 9)}</div>
           </div>
@@ -147,7 +116,8 @@ const BlogPosts = ({ data, onHandleBlog }) => {
 export default Home;
 
 export async function getStaticProps() {
-  const response = await axios.get("http://localhost:3000/getposts");
+  const url = process.env.NEXT_PUBLIC_API_URL;
+  const response = await axios.get(`${url}/getposts`);
   const data = response.data;
   return {
     props: {
