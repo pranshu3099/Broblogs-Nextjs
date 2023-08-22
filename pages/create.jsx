@@ -19,14 +19,20 @@ import {
 const CreateBlog = ({ categories }) => {
   const [selectedFile, setSelectedFile] = useState([]);
   const [imagePreview, setImagePreview] = useState([]);
-  const [resizedImage, setResizedImage] = useState(null);
-  const [additionalComponents, setAdditionalComponents] = useState([]);
   const [url, setUrl] = useState([]);
   const router = useRouter();
   const api_url = process.env.NEXT_PUBLIC_API_URL;
   const [selectedCategory, setSelectedCategory] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
-
+  const getBearerToken = () => localStorage.getItem("Bearer");
+  const [bearer] = useState(getBearerToken);
+  const headers = useMemo(
+    () => ({
+      Authorization: `${bearer}`,
+      "Content-Type": "application/json",
+    }),
+    [bearer]
+  );
   const blogReducer = (state, { type, payload }) => {
     switch (type) {
       case "pending":
@@ -65,7 +71,7 @@ const CreateBlog = ({ categories }) => {
       posts_id: Number(randomNum),
     };
     axios
-      .post(`${api_url}/createposts`, data)
+      .post(`${api_url}/createposts`, data, { headers })
       .then((response) => {
         if (response.status === 200) {
           router.push("/");
