@@ -10,13 +10,13 @@ const Home = ({ posts }) => {
         </header>
         <article className="article">
           <p>
-            Hi there, I'm Shoubhit aka nexxel. I'm 18 y/o and going to
-            university soon. I like shuffling cards and building things. I enjoy
+            Hi there, I'm Pranshu aka Brocode. I'm 24 y/o and i work as a
+            software Engineer. I like to rap and love writing songs. I enjoy
             language design, web development and I live on the terminal.
           </p>
           <p>
-            Right now I'm building a journal app, learning OCaml, writing blog
-            posts and going to the gym regularly.
+            I recently started writing articles on my blog about things I learn,
+            learning Next js, writing blog posts.
           </p>
         </article>
 
