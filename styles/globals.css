@@ -332,6 +332,39 @@
   cursor: pointer;
 }
 
+/* ---------- signup--------- */
+
+/* ----------------------- signup page ------------------- */
+
+.sign-up-icons {
+  width: 1.5rem;
+  position: relative;
+  left: 90%;
+  bottom: 3rem;
+  cursor: pointer;
+}
+
+.signup {
+  height: 13rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.signup-h1 {
+  /* color: white; */
+  font-family: var(--font-family);
+  font-size: 27px;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+}
+
+.signup-btn {
+  text-align: center;
+}
+
 /* ----------- profile ------------ */
 
 .profile-icon {
