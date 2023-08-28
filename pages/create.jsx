@@ -24,8 +24,14 @@ const CreateBlog = ({ categories }) => {
   const api_url = process.env.NEXT_PUBLIC_API_URL;
   const [selectedCategory, setSelectedCategory] = useState("");
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const getBearerToken = () => localStorage.getItem("Bearer");
-  const [bearer] = useState(getBearerToken);
+  const [bearer, setBearer] = useState("");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setBearer(localStorage.getItem("Bearer"));
+    }
+  }, [router.asPath]);
+
   const headers = useMemo(
     () => ({
       Authorization: `${bearer}`,
