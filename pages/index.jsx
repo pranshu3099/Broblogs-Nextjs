@@ -6,13 +6,13 @@ const Home = ({ posts }) => {
     <>
       <div className="home-container">
         <header>
-          <h1>Pranshu's Blog</h1>
+          <h1>Pranshu`&apos;`s Blog</h1>
         </header>
         <article className="article">
           <p>
-            Hi there, I'm Pranshu aka Brocode. I'm 24 y/o and i work as a
-            software Engineer. I like to rap and love writing songs. I enjoy
-            language design, web development and I live on the terminal.
+            Hi there, I`&apos;`m Pranshu aka Brocode. I`&apos;`m 24 y/o and i
+            work as a software Engineer. I like to rap and love writing songs. I
+            enjoy language design, web development and I live on the terminal.
           </p>
           <p>
             I recently started writing articles on my blog about things I learn,
