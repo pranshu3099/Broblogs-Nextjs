@@ -365,6 +365,13 @@
   text-align: center;
 }
 
+.password {
+  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 /* ----------- profile ------------ */
 
 .profile-icon {
