@@ -101,7 +101,6 @@ const Signup = () => {
     password_confirmation: "",
     email: "",
     mobile_number: "",
-    type: "pending",
     passwordvalidate: false,
     confimpasswordvalidate: false,
     matchpassword: false,
@@ -199,19 +198,22 @@ const Signup = () => {
               value={data.name}
               onChange={(e) => {
                 dispatch({
-                  ...data,
-                  name: e.target.value,
                   type: "name",
+                  name: e.target.value,
                   nameValidation: true,
                 });
               }}
             />
             <img className="sign-up-icons" src="/icons/user.png" alt="" />
             {data.nameValidation && (
-              <div style={{ color: "red" }}>Invalid Name</div>
+              <div style={{ color: "red", textAlign: "center" }}>
+                Invalid Name
+              </div>
             )}
             {requiredFields.name && (
-              <div style={{ color: "red" }}>Name field is required</div>
+              <div style={{ color: "red", textAlign: "center" }}>
+                Name field is required
+              </div>
             )}
             <Input
               type="number"
@@ -223,7 +225,6 @@ const Signup = () => {
               value={data.mobile_number}
               onChange={(e) => {
                 dispatch({
-                  ...data,
                   mobile_number: e.target.value,
                   type: "mobile_number",
                   mobileVerification: true,
@@ -231,12 +232,15 @@ const Signup = () => {
               }}
             />
             {data.mobileVerification && (
-              <div style={{ color: "red" }}>
+              <div style={{ color: "red", textAlign: "center" }}>
                 Mobile number must be of 10 digits
               </div>
             )}
             {requiredFields.mobile_number && (
-              <div style={{ color: "red" }}> Mobile number is required</div>
+              <div style={{ color: "red", textAlign: "center" }}>
+                {" "}
+                Mobile number is required
+              </div>
             )}
             <img className="sign-up-icons" src="/icons/phone.png" alt="" />
             <Input
@@ -249,7 +253,6 @@ const Signup = () => {
               value={data.email}
               onChange={(e) => {
                 dispatch({
-                  ...data,
                   email: e.target.value,
                   type: "email",
                   emailVerification: true,
@@ -257,10 +260,14 @@ const Signup = () => {
               }}
             />
             {data.emailVerification && (
-              <div style={{ color: "red" }}>Invalid email address</div>
+              <div style={{ color: "red", textAlign: "center" }}>
+                Invalid email address
+              </div>
             )}
             {requiredFields.email && (
-              <div style={{ color: "red" }}>email address is required</div>
+              <div style={{ color: "red", textAlign: "center" }}>
+                email address is required
+              </div>
             )}
             <img className="sign-up-icons" src="/icons/email.png" alt="" />
             <Input
@@ -274,7 +281,6 @@ const Signup = () => {
               value={data.password}
               onChange={(e) => {
                 dispatch({
-                  ...data,
                   password: e.target.value,
                   passwordvalidate: true,
                   type: "password",
@@ -299,7 +305,10 @@ const Signup = () => {
               </div>
             )}
             {requiredFields.password && (
-              <div style={{ color: "red" }}> The password field is rquired</div>
+              <div style={{ color: "red", textAlign: "center" }}>
+                {" "}
+                The password field is rquired
+              </div>
             )}
             <Input
               type="Password"
@@ -312,7 +321,6 @@ const Signup = () => {
               value={data.password_confirmation}
               onChange={(e) => {
                 dispatch({
-                  ...data,
                   password_confirmation: e.target.value,
                   confimpasswordvalidate: true,
                   type: "confirm_password",
@@ -337,11 +345,13 @@ const Signup = () => {
               </div>
             )}
             {data.matchpassword && (
-              <div className="password">Password does not match</div>
+              <div className="password" style={{ color: "red" }}>
+                Password does not match
+              </div>
             )}
             {requiredFields.password_confirmation && (
-              <div style={{ color: "red" }}>
-                The cofirm password field is rquired
+              <div style={{ color: "red", textAlign: "center" }}>
+                The confirm password field is rquired
               </div>
             )}
             <div className="signup-btn">
