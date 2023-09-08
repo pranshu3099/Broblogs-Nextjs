@@ -13,6 +13,7 @@ const Login = () => {
     password: "",
   });
   const router = useRouter();
+  const api_url = process.env.NEXT_PUBLIC_API_URL;
   let changeIcon = (e, icon) => {
     if (icon === "/icons/eye.png") {
       e.target.attributes.src.textContent = "/icons/hidden.png";
@@ -50,7 +51,7 @@ const Login = () => {
 
   function fetchdata() {
     axios
-      .post("http://localhost:3000/login", data)
+      .post(`${api_url}/login`, data)
       .then((response) => {
         if (response.status === 200) {
           localStorage.setItem("Bearer", response?.data?.Authorization);
