@@ -107,7 +107,6 @@ const CreateBlog = () => {
     setSelectedCategory(value);
   };
   const handleRemovelist = (url, list_img) => {
-    console.log(list_img);
     let newfilearr = imagePreview.filter((img) => {
       if (img !== url) return true;
       return false;
@@ -166,6 +165,7 @@ const CreateBlog = () => {
     selectedFile.forEach((image) => {
       formData.append("images", image);
     });
+    console.log(formData);
     try {
       const response = axios
         .post(`${api_url}/api/uploadimage`, formData)
