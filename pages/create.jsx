@@ -16,9 +16,10 @@ import {
   useDisclosure,
   Input,
 } from "@chakra-ui/react";
-const CreateBlog = ({ categories }) => {
+const CreateBlog = () => {
   const [selectedFile, setSelectedFile] = useState([]);
   const [imagePreview, setImagePreview] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [url, setUrl] = useState([]);
   const router = useRouter();
   const api_url = process.env.NEXT_PUBLIC_API_URL;
@@ -39,6 +40,20 @@ const CreateBlog = ({ categories }) => {
     }),
     [bearer]
   );
+
+  useEffect(() => {
+    const url = process.env.NEXT_PUBLIC_API_URL;
+    axios
+      .get(`${url}/getcategories`)
+      .then((res) => {
+        console.log(res?.data);
+        setCategories(res?.data?.categories);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
   const blogReducer = (state, { type, payload }) => {
     switch (type) {
       case "pending":
@@ -344,7 +359,7 @@ const SelectCategories = ({ category, onChange }) => {
     },
     [onChange]
   );
-  const category_data = category.categories;
+  const category_data = category;
   return (
     <>
       <select onChange={handleChange}>
@@ -362,14 +377,3 @@ const SelectCategories = ({ category, onChange }) => {
 };
 
 export default CreateBlog;
-
-export async function getStaticProps() {
-  const url = process.env.NEXT_PUBLIC_API_URL;
-  const response = await axios.get(`${url}/getcategories`);
-  const data = response.data;
-  return {
-    props: {
-      categories: data,
-    },
-  };
-}
