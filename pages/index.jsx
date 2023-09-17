@@ -10,8 +10,8 @@ const Home = ({ posts }) => {
         </header>
         <article className="article">
           <p>
-            Hi there, I &apos; m Pranshu aka Brocode. I &apos; m 24 y/o and i
-            work as a software Engineer. I like to rap and love writing songs. I
+            Hi there, I&apos;m Pranshu aka Brocode. I&apos;m 24 y/o and i work
+            as a software Engineer. I like to rap and love writing songs. I
             enjoy language design, web development and I live on the terminal.
           </p>
           <p>
