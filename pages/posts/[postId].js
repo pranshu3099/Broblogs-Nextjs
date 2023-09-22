@@ -46,6 +46,7 @@ const Posts = ({ post }) => {
       .then((res) => {
         console.log("response", res);
         if (res.status === 401) {
+          console.log("first");
           setAuthStatus({ ...authStatus, status: false, user: null });
         } else {
           setAuthStatus({ ...authStatus, status: true, user: res?.[0]?.user });
