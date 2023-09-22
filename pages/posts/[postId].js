@@ -290,7 +290,7 @@ const BlogPosts = ({
             <p>{post?.posts?.created_at.substring(0, 9)}</p>
           </div>
 
-          {userstatus?.status ? (
+          {userstatus?.status === true ? (
             <div className="post-icons-container">
               <img
                 src={
