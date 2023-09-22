@@ -45,10 +45,14 @@ const Posts = ({ post }) => {
       .then((res) => res.json())
       .then((res) => {
         console.log("response", res);
-        setAuthStatus({ ...authStatus, status: true, user: res?.[0]?.user });
+        if (res.status === 401) {
+          setAuthStatus({ ...authStatus, status: false, user: null });
+        } else {
+          setAuthStatus({ ...authStatus, status: true, user: res?.[0]?.user });
+        }
       })
       .catch((err) => {
-        setAuthStatus({ ...authStatus, status: false, user: null });
+        console.log(err);
       });
   }, []);
 
