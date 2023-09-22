@@ -45,7 +45,7 @@ const Posts = ({ post }) => {
       .then((res) => res.json())
       .then((res) => {
         console.log("response", res);
-        if (res.status === 401) {
+        if (res[0]?.message === "unauthorized") {
           console.log("first");
           setAuthStatus({ ...authStatus, status: false, user: null });
         } else {
