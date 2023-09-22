@@ -44,7 +44,7 @@ const Posts = ({ post }) => {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        console.log("response", res);
         setAuthStatus({ ...authStatus, status: true, user: res?.[0]?.user });
       })
       .catch((err) => {
