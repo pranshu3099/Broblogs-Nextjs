@@ -53,9 +53,9 @@ const Posts = ({ post }) => {
       .then((res) => {
         console.log("response", res);
         if (res[0]?.message === "unauthorized") {
-          setAuthStatus({ ...authStatus, status: false, user: null });
+          setAuthStatus({ status: false, user: null });
         } else {
-          setAuthStatus({ ...authStatus, status: true, user: res?.[0]?.user });
+          setAuthStatus({ status: true, user: res?.[0]?.user });
         }
       })
       .catch((err) => {
