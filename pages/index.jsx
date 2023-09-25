@@ -1,7 +1,14 @@
 import Link from "next/link";
 import axios from "axios";
-
+import { Button } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 const Home = ({ posts }) => {
+  const [item, setItem] = useState(false);
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setItem(localStorage.getItem("Bearer"));
+    }
+  }, []);
   return (
     <>
       <div className="home-container">
@@ -67,7 +74,7 @@ const Home = ({ posts }) => {
           </header>
 
           <>
-            <div>{posts.length && <BlogPosts data={posts} />}</div>
+            <div>{posts.length && <BlogPosts data={posts} item={item} />}</div>
           </>
         </div>
         <hr />
@@ -90,20 +97,30 @@ const Home = ({ posts }) => {
   );
 };
 
-const BlogPosts = ({ data }) => {
+const BlogPosts = ({ data, item }) => {
   const posts_data = data[0]?.posts;
   return (
     <>
       {posts_data.map((post, index) => (
         <div key={index} className="user-blogs-sub-container">
-          <Link
-            href={`posts/${post.posts_id}`}
-            style={{ textDecoration: "none", color: "black" }}
-          >
-            <p style={{ cursor: "pointer" }} key={post?.id}>
-              {post.title}
-            </p>
-          </Link>
+          <div style={{ display: "flex", gap: "1rem", alignItems: "end" }}>
+            <Link
+              href={`posts/${post.posts_id}`}
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              <p style={{ cursor: "pointer" }} key={post?.id}>
+                {post.title}
+              </p>
+            </Link>
+            {item && (
+              <div>
+                <a href="" target="_blank">
+                  <img src="/icons/edit.png" alt="" style={{ width: "20px" }} />
+                </a>
+              </div>
+            )}
+          </div>
+
           <div className="date-name-container">
             <div>{post.created_at.substring(0, 9)}</div>
           </div>
