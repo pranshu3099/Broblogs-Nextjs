@@ -21,16 +21,8 @@ const Posts = ({ post }) => {
     let islikedArray = [];
 
     if (posts !== undefined) {
-      console.log(posts.hasOwnProperty(post?.[0]?.posts?.posts_id));
-      console.log(
-        posts[post?.[0]?.posts?.posts_id].includes(authStatus?.user?.id)
-      );
-      console.log(posts);
-      console.log(authStatus);
-      console.log(posts[post?.[0]?.posts?.posts_id]);
       if (posts.hasOwnProperty(post?.[0]?.posts?.posts_id)) {
         if (posts[post?.[0]?.posts?.posts_id].includes(authStatus?.user?.id)) {
-          console.log(authStatus?.user?.id);
           islikedArray.push(true);
         } else {
           islikedArray.push(false);
