@@ -180,19 +180,25 @@
   font-weight: bold;
 }
 
+.post-title h2 {
+  font-size: 25px;
+  font-weight: bold;
+  margin: 14px;
+}
+
 .post-title p {
   overflow: hidden;
   margin: 20px;
   font-size: large;
 }
 
+.post-title ul {
+  padding: 33px;
+}
+
 .image-wrapper {
   width: 100% !important;
   height: 100% !important;
-  /* background-color: #f0f0f0; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 .image-wrapper img {
   width: 855px !important;
