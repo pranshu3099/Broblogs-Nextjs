@@ -11,7 +11,6 @@ const Posts = ({ post }) => {
   const [authStatus, setAuthStatus] = useState({ status: false, user: null });
   const router = useRouter();
   const url = process.env.NEXT_PUBLIC_API_URL;
-
   useEffect(() => {
     setYourCommentList(post?.[0]?.posts?.comments);
     let likearr = localStorage.getItem("posts")
@@ -284,8 +283,8 @@ const BlogPosts = ({
     onhandleComment(e);
   };
 
-  const CLIENT_ID = process.env.CLIENT_ID;
   const REDIRECT_URL = `${api_url}/api/auth/github`;
+  const CLIENT_ID = process.env.NEXT_PUBLIC_CLIENT_ID;
   let path = `posts/${posts?.[0]?.posts?.posts_id}`;
   return (
     <>
