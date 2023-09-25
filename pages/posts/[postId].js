@@ -284,7 +284,7 @@ const BlogPosts = ({
     onhandleComment(e);
   };
 
-  const CLIENT_ID = "e3bdfbba37dd3ad44a50";
+  const CLIENT_ID = process.env.CLIENT_ID;
   const REDIRECT_URL = `${api_url}/api/auth/github`;
   let path = `posts/${posts?.[0]?.posts?.posts_id}`;
   return (
