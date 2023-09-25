@@ -12,7 +12,6 @@ const Posts = ({ post }) => {
   const router = useRouter();
   const url = process.env.NEXT_PUBLIC_API_URL;
   useEffect(() => {
-    console.log(post);
     setYourCommentList(post?.[0]?.posts?.comments);
     let likearr = localStorage.getItem("posts")
       ? JSON.parse(localStorage.getItem("posts"))
@@ -23,7 +22,7 @@ const Posts = ({ post }) => {
 
     if (posts !== undefined) {
       if (posts.hasOwnProperty(post?.[0]?.posts?.posts_id)) {
-        if (posts[post?.[0]?.posts?.posts_id].includes(48)) {
+        if (posts[post?.[0]?.posts?.posts_id].includes(authStatus?.user?.id)) {
           islikedArray.push(true);
         } else {
           islikedArray.push(false);
@@ -46,7 +45,6 @@ const Posts = ({ post }) => {
       .then((res) => {
         console.log("response", res);
         if (res[0]?.message === "unauthorized") {
-          console.log("first");
           setAuthStatus({ ...authStatus, status: false, user: null });
         } else {
           setAuthStatus({ ...authStatus, status: true, user: res?.[0]?.user });
