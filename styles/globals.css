@@ -412,4 +412,7 @@
     width: 855px !important;
     height: 221px !important;
   }
+  .post-title h2 {
+    margin: 0px;
+  }
 }
