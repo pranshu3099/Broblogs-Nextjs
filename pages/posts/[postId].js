@@ -11,6 +11,7 @@ const Posts = ({ post }) => {
   const [authStatus, setAuthStatus] = useState({ status: false, user: null });
   const router = useRouter();
   const url = process.env.NEXT_PUBLIC_API_URL;
+  console.log(post);
   useEffect(() => {
     setYourCommentList(post?.[0]?.posts?.comments);
     let likearr = localStorage.getItem("posts")
