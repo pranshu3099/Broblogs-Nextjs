@@ -408,38 +408,8 @@
   .comment-list-container ul {
     height: 150vh;
   }
-
-  /* .login {
-    margin: 0 !important;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    height: 0 !important;
+  .image-wrapper img {
+    width: 855px !important;
+    height: 221px !important;
   }
-
-  .login-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .login-img {
-    width: 45rem;
-  }
-
-  .login-h1 {
-    font-family: var(--font-family);
-    font-size: 14px;
-  }
-
-  .login-container div button {
-    display: flex;
-    flex-direction: column;
-  }
-  .login-icons {
-    width: 1.5rem;
-    position: relative;
-    left: 22rem;
-    bottom: 3rem;
-    cursor: pointer;
-  } */
 }
