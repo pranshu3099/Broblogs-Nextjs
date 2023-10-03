@@ -11,7 +11,30 @@ const Posts = ({ post }) => {
   const [authStatus, setAuthStatus] = useState({ status: false, user: null });
   const router = useRouter();
   const url = process.env.NEXT_PUBLIC_API_URL;
-  console.log(post);
+
+  useEffect(() => {
+    const checkValidity = async () => {
+      try {
+        const res = await fetch(`${url}/tokenvalid`, {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          credentials: "include",
+        });
+        const data = await res.json();
+        if (data[0]?.message === "unauthorized") {
+          setAuthStatus({ ...authStatus, status: false, user: null });
+        } else {
+          setAuthStatus({ ...authStatus, status: true, user: data?.[0]?.user });
+        }
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    checkValidity();
+  }, []);
+
   useEffect(() => {
     setYourCommentList(post?.[0]?.posts?.comments);
     let likearr = localStorage.getItem("posts")
@@ -32,29 +55,7 @@ const Posts = ({ post }) => {
     }
 
     setResult(islikedArray);
-  }, []);
-
-  useEffect(() => {
-    fetch(`${url}/tokenvalid`, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        console.log("response", res);
-        if (res[0]?.message === "unauthorized") {
-          setAuthStatus({ ...authStatus, status: false, user: null });
-        } else {
-          setAuthStatus({ ...authStatus, status: true, user: res?.[0]?.user });
-        }
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, []);
+  }, [authStatus]);
 
   function setLikedToLocalStorage(user_id, post_id) {
     let likearr = localStorage.getItem("posts")
