@@ -46,7 +46,7 @@ const Home = ({ posts }) => {
         </article>
         <div className="user-blogs-container">
           <header>
-            <h1 style={{ fontSize: "23px", margin: "0px", padding: "0px" }}>
+            <h1 style={{ fontSize: "21px", margin: "0px", padding: "0px" }}>
               Blogs
             </h1>
           </header>
@@ -57,7 +57,7 @@ const Home = ({ posts }) => {
         </div>
         <div className="projects-container">
           <header>
-            <h1 style={{ fontSize: "23px" }}>Projects</h1>
+            <h1 style={{ fontSize: "21px" }}>Projects</h1>
           </header>
           <div className="projects-sub-container">
             <div>
