@@ -46,7 +46,9 @@ const Home = ({ posts }) => {
         </article>
         <div className="user-blogs-container">
           <header>
-            <h1 style={{ fontSize: "23px" }}>Blogs</h1>
+            <h1 style={{ fontSize: "23px", margin: "0px", padding: "0px" }}>
+              Blogs
+            </h1>
           </header>
 
           <>
