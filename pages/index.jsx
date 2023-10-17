@@ -2,6 +2,7 @@ import Link from "next/link";
 import axios from "axios";
 import { Button } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import Head from "next/head";
 const Home = ({ posts }) => {
   const [item, setItem] = useState(false);
   useEffect(() => {
@@ -12,8 +13,25 @@ const Home = ({ posts }) => {
   return (
     <>
       <div className="home-container">
+        <Head>
+          <meta
+            key="description"
+            name="description"
+            content="This is where I share my projects and thoughts. Dive into my portfolio, get a glimpse of what I've been working on, and find inspiration in my blog posts."
+          />
+          <meta
+            key="title"
+            property="og:title"
+            content="Pranshu's Portfolio and Blog: Discover My Projects and Insights"
+          />
+          <meta
+            key="description"
+            property="og:description"
+            content="This is where I share my projects and thoughts. Dive into my portfolio, get a glimpse of what I've been working on, and find inspiration in my blog posts"
+          />
+        </Head>
         <header>
-          <h1>Pranshu&apos;s Blog</h1>
+          <h1 style={{ fontSize: "26px" }}>Pranshu&apos;s Blog</h1>
         </header>
         <article className="article">
           <p>
@@ -26,10 +44,18 @@ const Home = ({ posts }) => {
             learning Next js, writing blog posts.
           </p>
         </article>
+        <div className="user-blogs-container">
+          <header>
+            <h1 style={{ fontSize: "23px" }}>Blogs</h1>
+          </header>
 
+          <>
+            <div>{posts.length && <BlogPosts data={posts} item={item} />}</div>
+          </>
+        </div>
         <div className="projects-container">
           <header>
-            <h1>Projects</h1>
+            <h1 style={{ fontSize: "23px" }}>Projects</h1>
           </header>
           <div className="projects-sub-container">
             <div>
@@ -68,15 +94,6 @@ const Home = ({ posts }) => {
           </div>
         </div>
 
-        <div className="user-blogs-container">
-          <header>
-            <h1>Blogs</h1>
-          </header>
-
-          <>
-            <div>{posts.length && <BlogPosts data={posts} item={item} />}</div>
-          </>
-        </div>
         <hr />
         <div className="myprofile-container">
           <p>Pranshu Srivastava</p>
