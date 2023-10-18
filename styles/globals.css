@@ -243,7 +243,7 @@
   position: fixed;
   width: 20%;
   height: 120vh;
-  background-color: #abcae9;
+  /* background-color: #abcae9; */
   top: 80px;
   overflow: auto;
   left: -100%;
