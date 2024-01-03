@@ -82,8 +82,10 @@ const Home = ({ posts }) => {
               <p>A Simple snake game made using javascript</p>
             </div>
             <div>
-              <a href="#">wordle</a>
-              <p>The best way to start a full-stack, typesafe Next.js app</p>
+              <a href="https://pranshu3099.github.io/movies-hub/index.html">
+                Movies Hub
+              </a>
+              <p>Search for movies and tv series </p>
             </div>
             <div>
               <a href="#">wordle</a>
