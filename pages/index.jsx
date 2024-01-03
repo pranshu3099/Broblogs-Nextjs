@@ -82,7 +82,10 @@ const Home = ({ posts }) => {
               <p>A Simple snake game made using javascript</p>
             </div>
             <div>
-              <a href="https://pranshu3099.github.io/movies-hub/index.html">
+              <a
+                href="https://pranshu3099.github.io/movies-hub/index.html"
+                target="_blank"
+              >
                 Movies Hub
               </a>
               <p>Search for movies and tv series </p>
