@@ -91,8 +91,10 @@ const Home = ({ posts }) => {
               <p>Search for movies and tv series </p>
             </div>
             <div>
-              <a href="#">wordle</a>
-              <p>The best way to start a full-stack, typesafe Next.js app</p>
+              <a href="https://chat.pranshu.dev/" target="_blank">
+                Doge chat
+              </a>
+              <p>Chat with cheems doggo and have fun</p>
             </div>
             <div>
               <a href="#">wordle</a>
