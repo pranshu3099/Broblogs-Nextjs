@@ -37,7 +37,7 @@ const Home = ({ posts }) => {
           <p>
             Hi there, I&apos;m Pranshu aka Brocode. I&apos;m 24 y/o and i work
             as a software Engineer. I like to rap and love writing songs. I
-            enjoy language design, web development and I live on the terminal.
+            mostly work with web related projects.
           </p>
           <p>
             I recently started writing articles on my blog about things I learn,
@@ -95,10 +95,6 @@ const Home = ({ posts }) => {
                 Doge chat
               </a>
               <p>Chat with cheems doggo and have fun</p>
-            </div>
-            <div>
-              <a href="#">wordle</a>
-              <p>The best way to start a full-stack, typesafe Next.js app</p>
             </div>
           </div>
         </div>
