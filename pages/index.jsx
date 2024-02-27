@@ -29,6 +29,7 @@ const Home = ({ posts }) => {
             property="og:description"
             content="This is where I share my projects and thoughts. Dive into my portfolio, get a glimpse of what I've been working on, and find inspiration in my blog posts"
           />
+          <link rel="icon" href="/icon.svg" />
         </Head>
         <header>
           <h1 style={{ fontSize: "26px" }}>Pranshu&apos;s Blog</h1>
