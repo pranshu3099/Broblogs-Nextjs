@@ -36,7 +36,7 @@ const Home = ({ posts }) => {
         <article className="article">
           <p>
             Hi there, I&apos;m Pranshu aka Brocode. I&apos;m 24 y/o and i work
-            as a software Engineer. I like to rap and love writing songs. I
+            as a Software Engineer. I like to rap and love writing songs. I
             mostly work with web related projects.
           </p>
           <p>
