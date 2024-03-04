@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { Button, Textarea } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -283,7 +283,6 @@ const CommentList = ({ usercomments }) => {
   );
 };
 
-import { useState } from "react";
 const HTMLRenderer = ({ htmlContent }) => {
   return <div dangerouslySetInnerHTML={{ __html: htmlContent }} />;
 };
