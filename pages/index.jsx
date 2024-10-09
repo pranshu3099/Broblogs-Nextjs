@@ -66,10 +66,10 @@ const Home = ({ posts }) => {
                 Bro Streams
               </a>
               <p>
-                Developed "Bro Streams," a Twitch-like platform using Next.js 14
-                with features including Clerk authentication, real-time
-                streaming via LiveKit, Tailwind CSS for styling, and interactive
-                user features like following, blocking, and guest access.
+                Developed &quot;Bro Streams,&quot; a Twitch-like platform using
+                Next.js 14 with Clerk authentication. Real-time streaming via
+                LiveKit, Tailwind CSS for styling, and interactive user features
+                like following, blocking, and guest access.
               </p>
             </div>
 
@@ -78,9 +78,10 @@ const Home = ({ posts }) => {
                 Doge chat
               </a>
               <p>
-                Built a fun, real-time chat application featuring a "Doge" dog
-                using React.js, Node.js, and OpenAI, with secure OTP-based
-                authentication and WebSocket for live chat, deployed on AWS.
+                Built a fun, real-time chat application featuring a
+                &quot;Doge&quot; dog using React.js, Node.js, and OpenAI, with
+                secure OTP-based authentication and WebSocket for live chat,
+                deployed on AWS.
               </p>
             </div>
             <div>
