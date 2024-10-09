@@ -62,25 +62,26 @@ const Home = ({ posts }) => {
           </header>
           <div className="projects-sub-container">
             <div>
-              <a
-                href="https://github.com/pranshu3099/parkade-frontend"
-                target="_blank"
-              >
-                Parkade
+              <a href="https://bro-streams.vercel.app/" target="_blank">
+                Bro Streams
               </a>
               <p>
-                Automatic car parking monitoring system. Real-time number plate
-                scanning. User registration and admin panel.
+                Developed "Bro Streams," a dynamic Twitch clone using Next.js
+                14, featuring Clerk authentication, real-time LiveKit streaming,
+                Tailwind styling, and robust user interaction (follow, block,
+                and guest access).
               </p>
             </div>
+
             <div>
-              <a
-                href="https://github.com/pranshu3099/Snake-Game"
-                target="_blank"
-              >
-                Snake Game
+              <a href="https://chat.pranshu.dev/" target="_blank">
+                Doge chat
               </a>
-              <p>A Simple snake game made using javascript</p>
+              <p>
+                Developed a fun, real-time chat app featuring a "Doge" dog using
+                React.js, Node.js, and OpenAI, with secure OTP authentication
+                and WebSocket, deployed on AWS.
+              </p>
             </div>
             <div>
               <a
@@ -90,12 +91,6 @@ const Home = ({ posts }) => {
                 Movies Hub
               </a>
               <p>Search for movies and tv series </p>
-            </div>
-            <div>
-              <a href="https://chat.pranshu.dev/" target="_blank">
-                Doge chat
-              </a>
-              <p>Chat with cheems doggo and have fun</p>
             </div>
           </div>
         </div>
